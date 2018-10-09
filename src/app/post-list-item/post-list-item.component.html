@@ -1,3 +1,6 @@
-<p>
-  post-list-item works!
-</p>
+<li [ngClass]="{'list-group-item':true,'list-group-item-success':loveIts > 0, 'list-group-item-danger': loveIts < 0}">
+  <h4>{{ title }}<small class="text-info float-right">{{ createdAt |  async | date: 'short' }}</small></h4>
+  <p>{{ content }}</p>
+  <button class="btn btn-success" (click)="onLove()">Love it !</button>
+  <button class="btn btn-danger" (click)="outLove()">Don't love it !</button>
+</li>
